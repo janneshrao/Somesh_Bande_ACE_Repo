@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Details": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "EmpID": {
+          "type": "integer"
+        },
+        "LOC": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "EmpID",
+        "LOC"
+      ]
+    }
+  },
+  "required": [
+    "Details"
+  ]
+}

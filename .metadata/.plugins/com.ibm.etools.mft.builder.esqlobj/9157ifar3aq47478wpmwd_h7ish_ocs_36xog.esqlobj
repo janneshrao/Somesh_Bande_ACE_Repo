@@ -1,0 +1,4 @@
+CREATE FUNCTION getpayload(in domainDataRef REFERENCE,in encodeRef INTEGER,in ccidRef INTEGER) RETURNS CHARACTER
+BEGIN
+	RETURN CAST(ASBITSTREAM(domainDataRef CCSID ccidRef ENCODING encodeRef) AS CHARACTER CCSID ccidRef ENCODING encodeRef); 
+END;

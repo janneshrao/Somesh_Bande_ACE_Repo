@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+<preferenceForDFDLFile dfdlFileLocation="/demo/SHEMA.xsd" didLastParseUseOutputFromUnparser="false" didLastUnparseUseLogicalInstance="false" lastFileUsedForParse="C:\Users\Sreenivas Bandaru\Desktop\SCHEMA.txt" lastFileUsedForUnparse="C:\Users\Sreenivas Bandaru\Desktop\SCHEMA.txt" messageRootUsedForLastParse="SHEMA" messageRootUsedForLastUnparse="SHEMA"/>
+<preferenceForDFDLFile dfdlFileLocation="/FTP_Demo/DFDL_demo.xsd" didLastParseUseOutputFromUnparser="false" lastFileUsedForParse="C:\Users\Sreenivas Bandaru\Documents\DFDL_FILE.txt" messageRootUsedForLastParse="DFDL_demo"/>
+</preferences>

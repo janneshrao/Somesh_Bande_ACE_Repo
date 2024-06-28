@@ -1,0 +1,5 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		SET OutputRoot.XMLNSC.b[]=InputRoot.ComIbmGroupCompleteNode.Group.Replies.a[].Reply.Root.XMLNSC.a;
+		--SET OutputRoot=InputRoot;
+			END;

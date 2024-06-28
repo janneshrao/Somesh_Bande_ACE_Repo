@@ -1,0 +1,7 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		DECLARE rc BOOLEAN;
+		DECLARE getpayload CHARACTER;
+		call getpayload()
+		CALL LOGS_CALL(ApplicationLabel,TIMESTAMP,getpayload) into rc;
+	END;

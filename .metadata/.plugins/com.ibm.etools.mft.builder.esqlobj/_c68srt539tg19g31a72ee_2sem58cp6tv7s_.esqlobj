@@ -1,0 +1,11 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		DECLARE REF REFERENCE TO InputRoot.DFDL.SHEMA.record;
+		WHILE LASTMOVE(REF) DO
+			SET OutputRoot.DFDL.SHEMA.record.ID = InputRoot.DFDL.SHEMA.record.ID;
+			SET OutputRoot.DFDL.SHEMA.record.NAME = InputRoot.DFDL.SHEMA.record.NAME;
+			SET OutputRoot.DFDL.SHEMA.record.ADD = InputRoot.DFDL.SHEMA.record.ADD;
+			MOVE REF NEXTSIBLING;
+		END WHILE;
+		--SET OutputRoot.DFDL.SHEMA.record.ID = InputRoot;
+	END;

@@ -1,0 +1,7 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		DECLARE num INTEGER;
+		SET num=LENGTH(InputRoot.ComIbmGroupCompleteNode.Group.Replies.a);
+		SET OutputRoot.XMLNSC.b.c = InputRoot.ComIbmGroupCompleteNode.Group.Replies.a.Reply.Root.XMLNSC.a;
+		
+			END;

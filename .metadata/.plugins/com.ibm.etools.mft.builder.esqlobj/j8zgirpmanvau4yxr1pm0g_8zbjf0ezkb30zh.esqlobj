@@ -1,0 +1,4 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		SET OutputRoot.XMLNSC.ns:operation1Response.OUT_MSG = InputRoot.XMLNSC.ns:operation1.IN_MSG;
+	END;

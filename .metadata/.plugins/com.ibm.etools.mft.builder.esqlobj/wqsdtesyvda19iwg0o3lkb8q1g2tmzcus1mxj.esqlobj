@@ -1,0 +1,25 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+
+    DECLARE msgType CHARACTER;
+    DECLARE msgContent BLOB;
+    
+    SET msgContent = InputRoot.BLOB.BLOB;
+    DECLARE msgString CHAR;
+    SET msgString = CAST(msgContent AS CHAR CCSID 1208);
+
+    -- Check if the message starts with '<' indicating it is XML
+    IF LEFT(TRIM(msgString), 1) = '<' THEN
+        SET msgType = 'XML';
+    -- Check if the message starts with '{' or '[' indicating it is JSON
+    ELSEIF LEFT(TRIM(msgString), 1) IN ('{', '[') THEN
+        SET msgType = 'JSON';
+    ELSE
+        THROW USER EXCEPTION MESSAGE 3000 VALUES('Unknown message format');
+    END IF;
+    
+    -- Set the message type in a local environment variable
+    SET OutputLocalEnvironment.Destination.MessageType = msgType;
+
+
+	END;

@@ -1,0 +1,6 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		SET OutputLocalEnvironment.Destination.RouterList.DestinationData[1].labelName = 'GET';
+		SET OutputLocalEnvironment.Destination.RouterList.DestinationData[2].labelName = 'PUT';
+		SET OutputLocalEnvironment.Destination.RouterList.DestinationData[3].labelName = 'POSt';
+	END;

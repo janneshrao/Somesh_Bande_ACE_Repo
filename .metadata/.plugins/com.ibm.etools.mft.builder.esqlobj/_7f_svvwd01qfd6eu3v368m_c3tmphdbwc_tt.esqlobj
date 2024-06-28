@@ -1,0 +1,16 @@
+CREATE COMPUTE MODULE Exeption_SubFlow_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE error ROW;
+		DECLARE Excepref REFERENCE TO InputExceptionList.[1];--this will point to the 1st child of exeption ex:parserexeption ...Also the exeption tree has  more than one eception tree as we know so we are saing to point at the firt exception.
+		WHILE ENDSWITH(FIELDNAME(Excepref),'Exception') DO   --the fieldname will be taking the PARSERECEPTION 
+			SET error.Number=Excepref.Number;
+			SET error.Text=Excepref.Text;
+			SET error.Severity= Excepref.Severity;
+			MOVE Excepref LASTCHILD;
+		END WHILE;
+		SET OutputRoot.JSON.Data.Exception.Number = error.Number;
+		SET OutputRoot.JSON.Data.Exception.Severity = error.Severity;
+		SET OutputRoot.JSON.Data.Exception.Text = error.Text;
+	END;
+END MODULE;

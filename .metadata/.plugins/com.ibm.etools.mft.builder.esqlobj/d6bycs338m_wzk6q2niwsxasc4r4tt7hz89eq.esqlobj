@@ -1,0 +1,9 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		IF InputRoot.JSON.Data.Message = 'Use catch terminal on HTTPInput node' THEN
+			THROW USER EXCEPTION;
+		ELSE
+			SET OutputRoot = InputRoot;
+			RETURN TRUE;
+		END IF;		
+	END;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><MessageBroker name="DatabaseNodeS">
+  <XSDCollection href="platform:/resource/DatabaseNodeS/orcl/system/DB.xsd" prefix="orclsystem" targetNamespace="http://orcl/system">
+    <element href="platform:/resource/DatabaseNodeS/orcl/system/DB.xsd#//EMPLOYEES_1;XSDElementDeclaration" name="EMPLOYEES_1" type="mlib://DatabaseNodeS#/-/complexType{http://orcl/system}EMPLOYEES_1Type"/>
+    <element href="platform:/resource/DatabaseNodeS/orcl/system/DB.xsd#//EVENT_EMPLOYEES;XSDElementDeclaration=1" name="EVENT_EMPLOYEES" type="mlib://DatabaseNodeS#/-/complexType{http://orcl/system}EVENT_EMPLOYEESType"/>
+    <complexType baseType="mlib://DatabaseNodeS#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/DatabaseNodeS/orcl/system/DB.xsd#//EMPLOYEES_1Type;XSDComplexTypeDefinition" name="EMPLOYEES_1Type"/>
+    <complexType baseType="mlib://DatabaseNodeS#/-/complexType{http://www.w3.org/2001/XMLSchema}anyType" href="platform:/resource/DatabaseNodeS/orcl/system/DB.xsd#//EVENT_EMPLOYEESType;XSDComplexTypeDefinition=1" name="EVENT_EMPLOYEESType"/>
+  </XSDCollection>
+</MessageBroker>

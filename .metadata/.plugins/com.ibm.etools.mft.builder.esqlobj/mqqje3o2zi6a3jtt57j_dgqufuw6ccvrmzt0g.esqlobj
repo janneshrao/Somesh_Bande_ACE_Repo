@@ -1,0 +1,10 @@
+CREATE COMPUTE MODULE Database_MSG_Flow_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE ref1 REFERENCE TO InputRoot.DataObject.ns:EMPLOYEES_1;
+		SET OutputRoot.JSON.Data.res.ID=ref1.EID;
+		SET OutputRoot.JSON.Data.res.NAEe=ref1.ENAME;
+		SET OutputRoot.JSON.Data.res.ADD=ref1.ADDRESS;
+		SET OutputRoot.JSON.Data.res.DESG=ref1.DESIGNATION;
+	END;
+END MODULE;

@@ -1,0 +1,33 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "DEMO_REST",
+    "version": "1.0.0",
+    "description": "DEMO_REST"
+  },
+  "servers": [
+    {
+      "url": "/demo_rest/v1"
+    }
+  ],
+  "paths": {
+    "/DEMO": {
+      "parameters": [
+        {
+          "name": "TEST",
+          "in": "query",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    }
+  }
+}

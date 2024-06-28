@@ -1,0 +1,9 @@
+CREATE COMPUTE MODULE LOGS_MSGFLOW_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE rc BOOLEAN;
+		DECLARE getpayload CHARACTER;
+		call getpayload()
+		CALL LOGS(ApplicationLabel,TIMESTAMP,getpayload) into rc;
+	END;
+END MODULE;

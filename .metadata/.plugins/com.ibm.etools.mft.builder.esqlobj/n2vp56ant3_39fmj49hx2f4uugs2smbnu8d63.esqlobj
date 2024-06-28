@@ -1,0 +1,11 @@
+CREATE COMPUTE MODULE Router_MSG_Flow_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+			SET OutputRoot.MQRFH2.Identifier=InputLocalEnvironment.Destination.HTTP.RequestIdentifier;
+			SET OutputRoot.JSON=InputRoot.JSON;
+			DECLARE request CHARACTER;
+			SEt request=CAST(ASBITSTREAM(InputRoot.JSON.Data CCSID InputRoot.Properties.CodedCharSetId ENCODING InputRoot.Properties.Encoding) AS CHARACTER CCSID InputRoot.Properties.CodedCharSetId ENCODING InputRoot.Properties.Encoding);
+			CALL LOGS(MessageFlowLabel,CURRENT_TIMESTAMP,request);
+			
+	END;
+END MODULE;

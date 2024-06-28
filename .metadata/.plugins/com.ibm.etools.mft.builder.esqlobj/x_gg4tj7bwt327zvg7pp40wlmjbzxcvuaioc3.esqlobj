@@ -1,0 +1,7 @@
+CREATE COMPUTE MODULE Provider_Flow_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		--throw USER EXCEPTION;
+		SET OutputRoot=InputRoot;
+	END;
+END MODULE;

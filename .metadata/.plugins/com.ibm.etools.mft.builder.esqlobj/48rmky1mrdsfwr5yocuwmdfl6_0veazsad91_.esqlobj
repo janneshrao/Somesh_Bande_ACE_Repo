@@ -1,0 +1,5 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		--throw USER EXCEPTION;
+		SET OutputRoot=InputRoot;
+	END;

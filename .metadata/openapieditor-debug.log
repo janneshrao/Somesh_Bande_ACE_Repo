@@ -1,0 +1,2 @@
+electron.js implementSubflow-request: {"resource":"/DEMO","operationId":"getDEMO"}
+electron.js subflowImplemented responseMsg: {"messagetype":301,"resource":"/DEMO","operationid":"getDEMO"}

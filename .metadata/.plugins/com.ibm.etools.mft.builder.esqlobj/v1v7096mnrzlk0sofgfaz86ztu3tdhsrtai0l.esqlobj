@@ -1,0 +1,4 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+	SET OutputRoot.SOAP.Body.ns:Soap_AttachementResponse.output = CAST(InputRoot.SOAP AS CHARACTER CCSID InputRoot.Properties.CodedCharSetId ENCODING InputRoot.Properties.Encoding);
+	END;

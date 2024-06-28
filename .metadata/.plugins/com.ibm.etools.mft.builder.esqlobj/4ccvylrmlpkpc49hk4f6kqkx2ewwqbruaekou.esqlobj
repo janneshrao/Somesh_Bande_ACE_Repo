@@ -1,0 +1,7 @@
+CREATE COMPUTE MODULE A_msg_flow_Compute1
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.XMLNSC.b=InputRoot.ComIbmGroupCompleteNode.Group.Replies.GROUP[].Reply.Root.XMLNSC.a;
+		--SET OutputRoot=InputRoot;
+			END;
+END MODULE;

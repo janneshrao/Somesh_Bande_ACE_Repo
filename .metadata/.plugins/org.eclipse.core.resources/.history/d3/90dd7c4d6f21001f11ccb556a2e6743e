@@ -1,0 +1,10 @@
+
+
+CREATE COMPUTE MODULE RoutingNodesMSGFlow_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputLocalEnvironment.Destination.RouterList.DestinationData[1].labelName = 'GET';
+		SET OutputLocalEnvironment.Destination.RouterList.DestinationData[2].labelName = 'PUT';
+		SET OutputLocalEnvironment.Destination.RouterList.DestinationData[3].labelName = 'POSt';
+	END;
+END MODULE;

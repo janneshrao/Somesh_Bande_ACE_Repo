@@ -1,0 +1,76 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		DECLARE dbLoggingTime TIMESTAMP CURRENT_TIME;
+		DECLARE dbLoggingDate TIMESTAMP CURRENT_TIMESTAMP;
+		SET Environment.Properties = InputRoot.Properties;
+		SET OutputRoot.MQRFH2 = Environment.MQRFH2;
+		SET Environment.MQMD = InputRoot.MQMD;
+		DECLARE resData,reqMsg,myBlob CHARACTER;
+		DECLARE ccidRef INTEGER InputRoot.Properties.CodedCharSetId;
+		DECLARE encodeRef INTEGER InputRoot.Properties.Encoding;
+		DECLARE domainDataRef REFERENCE TO InputRoot.JSON.Data;
+		DECLARE domainName CHARACTER FIELDNAME(InputBody);
+		DECLARE OutRef REFERENCE TO OutputRoot;
+		DECLARE inRef REFERENCE TO InputRoot.JSON.Data;
+		DECLARE responceCode CHARACTER InputRoot.HTTPResponseHeader."X-Original-HTTP-Status-Code";
+		IF FIELDNAME(InputBody) LIKE 'JSON' THEN
+			DECLARE inRef REFERENCE TO InputRoot.JSON.Data;
+			SET Environment.Variables.errMsg = InputRoot.JSON.Data;
+		
+		ELSE
+			DECLARE inRef REFERENCE TO InputRoot.BLOB.BLOB;
+			CREATE LASTCHILD OF OutputRoot DOMAIN('JSON') PARSE(inRef,encodeRef,ccidRef);
+			SET domainName = 'JSON';
+			SET Environment.Variables.errMsg = OutputRoot.JSON.Data;
+			
+		END IF;
+		SET OutputRoot = NULL;
+		---------DBLogging------------
+		
+		--SET OutputLocalEnvironment.Destination.MQ.DestinationData[1].queueName = RAW_AUDIT_Q;
+		--PROPAGATE TO TERMINAL 'out';
+		------------------
+		
+		------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		DECLARE Inrefer REFERENCE to InputRoot.JSON.Data;
+		CREATE LASTCHILD OF OutputRoot DOMAIN ('JSON');
+		CREATE LASTCHILD OF OutputRoot.JSON NAME ('Data');
+		CREATE LASTCHILD OF OutputRoot.JSON.Data NAME ('SchoolFeePayment');
+		CREATE LASTCHILD OF OutputRoot.JSON.Data.* NAME ('header');
+		CREATE LASTCHILD OF OutputRoot.JSON.Data.* NAME ('body');
+		DECLARE headRef REFERENCE TO OutputRoot.JSON.Data.*.header;
+		DECLARE bodyRef REFERENCE TO OutputRoot.JSON.Data.*.body;
+		DECLARE status CHARACTER InputRoot.JSON.Data.header.status;
+		IF status LIKE 'success' THEN
+			SET headRef = Inrefer.header;
+			SET headRef.channel = '*236#';
+			SET headRef.processingCode = '400000';
+			SET headRef.responseCode = responceCode;
+			SET bodyRef = Inrefer.body;
+		ELSE
+			SET headRef.channel = '*236#';
+			SET headRef.processingCode = '400000';
+			SET headRef.responseCode = responceCode;
+			SET headRef.status = 'Failure';
+			SET bodyRef = Environment.Variables.errMsg;
+		END IF;
+		DECLARE envref REFERENCE TO Environment.JSON.Data;
+		CREATE LASTCHILD OF Environment AS envref DOMAIN 'JSON';
+		CREATE LASTCHILD OF envref AS envref NAME 'Data';
+		SET envref = OutputRoot.JSON.Data;
+		SET domainDataRef = OutputRoot.JSON;
+		
+		SET OutputRoot = NULL;
+		----- Database Logging ------------
+		
+	--	SET OutputLocalEnvironment.Destination.MQ.DestinationData[1].queueName = RAW_AUDIT_Q;
+		--PROPAGATE TO TERMINAL 'out';
+		----------------------
+		SET OutputRoot.Properties=InputRoot.Properties;
+		SET OutputRoot.MQRFH2 = Environment.MQRFH2;
+		SET OutputRoot.MQMD = InputRoot.MQMD;
+		SET OutputRoot.MQRFH2.usr=Environment.usr;
+		SET OutputRoot.JSON.Data=envref;
+		
+		SET OutputLocalEnvironment.Destination.MQ.DestinationData[1].queueName = 'outRouter';
+	END;

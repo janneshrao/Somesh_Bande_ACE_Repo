@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "REST_Application",
+    "version": "1.0.0",
+    "description": "REST_Application"
+  },
+  "servers": [
+    {
+      "url": "/rest_application/v1"
+    }
+  ],
+  "security": [],
+  "components": {
+    "securitySchemes": {}
+  },
+  "paths": {
+    "/DemoREST": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "parameters": [
+          {
+            "name": "PARAM",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string"
+                },
+                "ID": {
+                  "type": "integer"
+                },
+                "Add": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		
+		CALL ENCRYPT(InputRoot.BLOB.BLOB);
+		
+	END;

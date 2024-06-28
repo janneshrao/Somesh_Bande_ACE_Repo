@@ -1,0 +1,9 @@
+CREATE COMPUTE MODULE SoapMsgFlow_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.SOAP.Body.ns:DetaislsResponse.ResponceDetails.Ename=InputRoot.SOAP.Body.ns:Detaisls.Details.Name;
+		SET OutputRoot.SOAP.Body.ns:DetaislsResponse.ResponceDetails.Eid=InputRoot.SOAP.Body.ns:Detaisls.Details.Id;
+		SET OutputRoot.SOAP.Body.ns:DetaislsResponse.ResponceDetails.Eadd=InputRoot.SOAP.Body.ns:Detaisls.Details.Address;
+		 
+	END;
+END MODULE;

@@ -1,0 +1,10 @@
+BROKER SCHEMA gen
+DECLARE ns NAMESPACE 'http://SOAP_IS';
+
+
+CREATE COMPUTE MODULE operation1_Request_Response_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.XMLNSC.ns:operation1Response.OUT_MSG = InputRoot.XMLNSC.ns:operation1.IN_MSG;
+	END;
+END MODULE;

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <inlinedXMLSchema targetNamespace="http://www.ibm.com/iib/msl/json"><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ibm.com/iib/msl/json"> 
+    <xsd:complexType block="#all" name="JSONArray_1"> 
+    <xsd:sequence> 
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="Item" nillable="true" type="xsd:string"/> 
+    </xsd:sequence> 
+  </xsd:complexType> 
+</xsd:schema>]]></inlinedXMLSchema>
+    <input path="/SOAPReqRes_InlineSchema1.xsd" var="var1"/>
+    <input path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/SOAPDomainMsg.xsd" var="var"/>
+    <input inlinedXMLSchema="true" path="../schema_0.xsd" targetNamespace="http://www.ibm.com/iib/msl/json" var="var3"/>
+    <output path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/JsonDomainMsg.xsd" var="var2"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="out" uri="http://schemas.xmlsoap.org/soap/envelope/"/>
+        <namespace kind="supplement" prefix="io" uri="http://www.example.org/SOAPReqRes/"/>
+        <namespace kind="supplement" prefix="io2" uri="http://www.ibm.com/iib/msl/json"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="SOAP_TARNS_Mapping">
+        <input path="$var/mb:msg(SOAP_Domain_Msg,assembly,SOAP,Properties)" var="MessageAssembly">
+            <cast path="$MessageAssembly/SOAP_Domain_Msg/Body/any" qualifier="{http://www.example.org/SOAPReqRes/}SOAP_TRANS" ref="var1"/>
+        </input>
+        <output namespace="http://www.ibm.com/iib/msl/json" path="$var2/mb:msg(JSON,assembly,JSON,Properties)" var="MessageAssembly1">
+            <cast castType="userDefined" path="$MessageAssembly1/JSON/Data/type('anyType')" qualifier="{http://www.ibm.com/iib/msl/json}JSONArray_1" ref="var3"/>
+        </output>
+        <move>
+            <input path="$MessageAssembly/Properties"/>
+            <output path="$MessageAssembly1/Properties"/>
+        </move>
+        <local>
+            <input path="$MessageAssembly/SOAP_Domain_Msg/Body/SOAP_TRANS/DETAILS"/>
+            <output path="$MessageAssembly1/JSON"/>
+        </local>
+    </mappingDeclaration>
+</mappingRoot>

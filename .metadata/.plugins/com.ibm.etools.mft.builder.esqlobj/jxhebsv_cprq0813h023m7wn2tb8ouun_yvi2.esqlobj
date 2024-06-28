@@ -1,0 +1,11 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		DECLARE rc BOOLEAN;
+
+		DECLARE getpayload CHARACTER;
+
+		SET getpayload=CAST(ASBITSTREAM(InputRoot.XMLNSC CCSID InputRoot.Properties.CodedCharSetId ENCODING InputRoot.Properties.Encoding)AS CHARACTER CCSID InputRoot.Properties.CodedCharSetId);
+
+		CALL LOGS( ApplicationLabel,CURRENT_TIMESTAMP,MessageFlowLabel,getpayload);
+		set OutputRoot=InputRoot;
+	END;

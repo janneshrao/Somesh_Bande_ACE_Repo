@@ -1,0 +1,3 @@
+CREATE PROCEDURE ENCRYPT (IN input BLOB )
+LANGUAGE JAVA
+EXTERNAL NAME "Java_project_EandD.EandD.encryptData" ;

@@ -1,0 +1,9 @@
+DECLARE ns NAMESPACE 'http://www.example.org/Provider/';
+
+
+CREATE COMPUTE MODULE Sopa_Provider_msg_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		set OutputRoot.SOAP.Body.ns:ProviderResponse.out=InputRoot.SOAP.Body.ns:Provider.in;
+	END;
+END MODULE;

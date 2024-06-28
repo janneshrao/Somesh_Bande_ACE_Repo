@@ -1,0 +1,6 @@
+CREATE COMPUTE MODULE Provider_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.SOAP.Body.ns:ConsumerResponse.out=InputRoot.SOAP.Body.ns:Consumer.in;
+	END;
+END MODULE;

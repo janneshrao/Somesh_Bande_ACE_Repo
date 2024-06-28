@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="SoapApplicationA" targetNamespace="http://www.example.org/SoapApplicationA/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/SoapApplicationA/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="SoapApplicationA_InlineSchema1.xsd"/>
+        <binding hasEncoding="false" imported="true" name="SoapApplicationASOAP" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    
+          <xsd:schema targetNamespace="http://www.example.org/SoapApplicationA/" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+<xsd:include schemaLocation="SoapApplicationA_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="DetaislsRequest">
+    <wsdl:part element="tns:Detaisls" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DetaislsResponse">
+    <wsdl:part element="tns:DetaislsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SoapApplicationA">
+    <wsdl:operation name="Detaisls">
+      <wsdl:input message="tns:DetaislsRequest"/>
+      <wsdl:output message="tns:DetaislsResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoapApplicationASOAP" type="tns:SoapApplicationA">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Detaisls">
+      <soap:operation soapAction="http://www.example.org/SoapApplicationA/Detaisls"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SoapApplicationA">
+    <wsdl:port binding="tns:SoapApplicationASOAP" name="SoapApplicationASOAP">
+      <soap:address location="http://localhost:7800/SoapAppA"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,13 @@
+
+
+Importing file: C:\Users\Sreenivas Bandaru\IBM\ACET12\workspace\SOAP_IS\SOAP_IS.wsdl
+
+The WSDL import will proceed with bindings SOAP_ISHttpBinding.
+Creating wsdl schema document for platform:/resource/SOAP_IS/SOAP_IS.wsdl.
+Parsing wsdl binding {http://SOAP_IS}SOAP_ISHttpBinding.
+Parsing wsdl binding input operation1.
+Parsing wsdl binding output operation1.
+Processing doc style for operation operation1.
+Populating WSDL schema SOAP_IS.xsd.
+Creating file SOAP_IS.xsd in the workspace.
+Copying source WSDL SOAP_IS.wsdl to SOAP_IS.wsdl.

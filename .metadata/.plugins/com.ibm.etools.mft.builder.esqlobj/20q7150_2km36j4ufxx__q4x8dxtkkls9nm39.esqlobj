@@ -1,0 +1,5 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		
+		SET OutputRoot.XMLNSC.DE = InputRoot.ComIbmAggregateReplyBody.AGG[1].EMPLOYEES_1.EID;
+	END;

@@ -1,0 +1,19 @@
+
+
+Importing file: C:\Users\Sreenivas Bandaru\IBM\ACET12\workspace\DB_INPUT\orcl.dbm
+
+
+Processing schema SYSTEM.
+Creating complex type for table EMPLOYEES_1.
+Creating global element for table EMPLOYEES_1.
+Creating complex type for table EVENT_EMPLOYEES.
+Creating global element for table EVENT_EMPLOYEES.
+Creating file \DatabaseNodeS\orcl\system\DB.xsd in the workspace.
+
+Elapsed time processing this message definition file: 17.94 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

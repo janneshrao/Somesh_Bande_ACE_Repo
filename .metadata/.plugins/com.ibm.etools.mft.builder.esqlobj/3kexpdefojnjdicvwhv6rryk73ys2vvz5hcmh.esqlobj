@@ -1,0 +1,7 @@
+CREATE COMPUTE MODULE AggrigateNodeMSG_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		SET OutputRoot.XMLNSC.DEt = InputRoot.ComIbmAggregateReplyBody.Aggrigate.Det;
+	END;
+END MODULE;

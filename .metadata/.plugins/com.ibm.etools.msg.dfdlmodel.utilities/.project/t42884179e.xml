@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><MessageBroker name="MappinDB_Appication">
+  <XSDCollection href="platform:/resource/MappinDB_Appication/DB_MAP.xsd" prefix="" targetNamespace="">
+    <element href="platform:/resource/MappinDB_Appication/DB_MAP.xsd#//Details;XSDElementDeclaration" name="Details"/>
+    <element href="platform:/resource/MappinDB_Appication/DB_MAP.xsd#//Id;XSDElementDeclaration=1" name="Id" type="mlib://MappinDB_Appication#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/MappinDB_Appication/DB_MAP.xsd#//Name;XSDElementDeclaration=2" name="Name" type="mlib://MappinDB_Appication#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/MappinDB_Appication/DB_MAP.xsd#//SAL;XSDElementDeclaration=3" name="SAL" type="mlib://MappinDB_Appication#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+  </XSDCollection>
+</MessageBroker>

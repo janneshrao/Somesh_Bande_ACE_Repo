@@ -1,0 +1,7 @@
+CREATE COMPUTE MODULE Timer_Node_MSG_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		SET OutputRoot = 'sample';
+	END;
+END MODULE;

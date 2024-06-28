@@ -1,0 +1,4 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		SET OutputRoot.JSON.Data.NAME=InputRoot.XMLNSC.NAME;
+	END;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="SOAPReqRes" targetNamespace="http://www.example.org/SOAPReqRes/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/SOAPReqRes/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="SOAPReqRes_InlineSchema1.xsd"/>
+        <binding hasEncoding="false" imported="true" name="SOAPReqResSOAP" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    
+          <xsd:schema targetNamespace="http://www.example.org/SOAPReqRes/" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+<xsd:include schemaLocation="SOAPReqRes_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="SOAP_TRANSRequest">
+    <wsdl:part element="tns:SOAP_TRANS" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SOAP_TRANSResponse">
+    <wsdl:part element="tns:SOAP_TRANSResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SOAPReqRes">
+    <wsdl:operation name="SOAP_TRANS">
+      <wsdl:input message="tns:SOAP_TRANSRequest"/>
+      <wsdl:output message="tns:SOAP_TRANSResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPReqResSOAP" type="tns:SOAPReqRes">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SOAP_TRANS">
+      <soap:operation soapAction="http://www.example.org/SOAPReqRes/SOAP_TRANS"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOAPReqRes">
+    <wsdl:port binding="tns:SOAPReqResSOAP" name="SOAPReqResSOAP">
+      <soap:address location="http://localhost:7800/Soap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

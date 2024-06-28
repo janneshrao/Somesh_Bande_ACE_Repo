@@ -1,0 +1,5 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		SET OutputRoot.XMLNSC.Name=InputRoot.XMLNSC.Name;
+		SET OutputRoot = InputRoot;
+	END;

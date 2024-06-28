@@ -1,0 +1,10 @@
+CREATE COMPUTE MODULE LOGS_MSGFLOW_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE rc BOOLEAN;
+		DECLARE getpayload CHARACTER;
+		SET getpayload=CAST(ASBITSTREAM(InputRoot.XMLNSC CCSID InputRoot.Properties.CodedCharSetId ENCODING InputRoot.Properties.Encoding)AS CHARACTER CCSID InputRoot.Properties.CodedCharSetId0;
+		
+		CALL LOGS(ApplicationLabel,TIMESTAMP,getpayload) into rc;
+	END;
+END MODULE;

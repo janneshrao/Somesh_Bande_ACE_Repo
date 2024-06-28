@@ -1,0 +1,5 @@
+CREATE COMPUTE MODULE Exeption_SubFlow_Exception
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	DECLARE error ROW;
+		DECLARE Excepref REFERENCE TO InputExceptionList.[1];
+		WHILE ENDSWITH(FIELDNAME(Excepref),'Exception') DO

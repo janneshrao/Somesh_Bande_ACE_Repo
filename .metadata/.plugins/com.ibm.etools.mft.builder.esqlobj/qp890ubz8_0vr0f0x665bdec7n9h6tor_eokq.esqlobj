@@ -1,0 +1,17 @@
+CREATE COMPUTE MODULE LOGS_MSGFLOW_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE rc BOOLEAN;
+		
+		DECLARE getpayload CHARACTER;
+		
+		SET getpayload=CAST(ASBITSTREAM(InputRoot.XMLNSC CCSID InputRoot.Properties.CodedCharSetId ENCODING InputRoot.Properties.Encoding)AS CHARACTER CCSID InputRoot.Properties.CodedCharSetId);
+		
+		DECLARE DATE_TIME TIMESTAMP CURRENT_TIMESTAMP;
+		
+		DECLARE appName CHARACTER ApplicationLabel;
+		
+		CALL LOGS(appName,DATE_TIME,MessageFlowLabel,getpayload) into rc;
+		set OutputRoot=InputRoot;
+	END;
+END MODULE;

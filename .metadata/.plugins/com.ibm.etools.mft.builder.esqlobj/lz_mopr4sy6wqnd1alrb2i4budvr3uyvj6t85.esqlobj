@@ -1,0 +1,14 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		DECLARE error ROW;
+		DECLARE Excepref REFERENCE TO InputExceptionList.[1];
+		WHILE ENDSWITH(FIELDNAME(Excepref),'Exception') DO
+			SET error.Number=Excepref.Number;
+			SET error.Text=Excepref.Text;
+			SET error.Severity= Excepref.Severity;
+			MOVE Excepref LASTCHILD;
+		END WHILE;
+		SET OutputRoot.JSON.Data.Exception.Number = error.Number;
+		SET OutputRoot.JSON.Data.Exception.Severity = error.Severity;
+		SET OutputRoot.JSON.Data.Exception.Text = error.Text;
+	END;

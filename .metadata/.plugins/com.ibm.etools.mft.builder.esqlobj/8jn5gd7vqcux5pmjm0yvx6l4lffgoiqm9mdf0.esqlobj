@@ -1,0 +1,4 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		CALL LOGS_CALL(ApplicationLabel,TIMESTAMP,getpayload) into rc;
+	END;

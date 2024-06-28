@@ -1,0 +1,6 @@
+CREATE COMPUTE MODULE SoapAttachement_msg_flow_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+	SET OutputRoot.SOAP.Body.ns:Soap_AttachementResponse.output = CAST(InputRoot.SOAP AS CHARACTER CCSID InputRoot.Properties.CodedCharSetId ENCODING InputRoot.Properties.Encoding);
+	END;
+END MODULE;

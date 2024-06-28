@@ -1,0 +1,8 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		SET OutputRoot=InputRoot;
+		SET OutputRoot.SOAP.Body.ns:DetaislsResponse.ResponceDetails.Ename=InputRoot.SOAP.Body.Details.Name;
+		SET OutputRoot.SOAP.Body.ns:DetaislsResponse.ResponceDetails.Eid=InputRoot.SOAP.Body.Details.Id;
+		 SET OutputRoot.SOAP.Body.ns:DetaislsResponse.ResponceDetails.Eadd=InputRoot.SOAP.Body.Details.Address;
+		 
+	END;

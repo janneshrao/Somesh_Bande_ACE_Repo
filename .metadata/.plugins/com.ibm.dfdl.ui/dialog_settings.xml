@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="postRunDFDLParsePopup" value="true"/>
+	<item key="errorRunningParsePopup" value="true"/>
+	<section name="com.ibm.dfdl.launching.testParse">
+		<item key="ParserInputsFromFile" value="true"/>
+		<item key="SerializerInputsFromFile" value="true"/>
+		<item key="Encoding" value="UTF-8"/>
+		<item key="BinaryFloarRep" value="ieee"/>
+		<item key="ByteOrder" value="bigEndian"/>
+		<item key="RuntimeValidation" value="false"/>
+		<list key="ParserInputs">
+			<item value="C:\Users\Sreenivas Bandaru\Desktop\SCHEMA.txt"/>
+			<item value="C:\Users\Sreenivas Bandaru\Documents\Sequence_inputMessage.xml"/>
+			<item value="C:\Users\Sreenivas Bandaru\Documents\DFDL_FILE.txt"/>
+		</list>
+		<list key="SerializerInputs">
+			<item value="C:\Users\Sreenivas Bandaru\Desktop\SCHEMA.txt"/>
+		</list>
+	</section>
+	<section name="com.ibm.dfdl.ui.DFDLEditor.outline.settings">
+		<item key="com.ibm.dfdl.internal.ui.visual.utils.outline.QuickOutlineInformationControlDIALOG_WIDTH" value="420"/>
+		<item key="com.ibm.dfdl.internal.ui.visual.utils.outline.QuickOutlineInformationControlDIALOG_HEIGHT" value="300"/>
+		<item key="com.ibm.dfdl.internal.ui.visual.utils.outline.QuickOutlineInformationControlDIALOG_USE_PERSISTED_SIZE" value="true"/>
+		<item key="com.ibm.dfdl.internal.ui.visual.utils.outline.QuickOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION" value="false"/>
+	</section>
+</section>

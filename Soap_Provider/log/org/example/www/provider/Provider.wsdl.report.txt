@@ -1,0 +1,22 @@
+
+
+Importing file: C:\Users\Sreenivas Bandaru\IBM\ACET12\workspace\Soap_Provider\Provider.wsdl
+
+The WSDL import will proceed with bindings ProviderSOAP.
+Creating wsdl schema document for file:///C:/Users/Sreenivas Bandaru/IBM/ACET12/workspace/Soap_Provider/Provider.wsdl.
+Parsing wsdl binding {http://www.example.org/Provider/}ProviderSOAP.
+Parsing wsdl binding input Provider.
+Parsing wsdl binding output Provider.
+Processing doc style for operation Provider.
+Populating WSDL schema Provider.xsd.
+Creating file Provider.xsd in the workspace.
+Creating file Provider_InlineSchema1.xsd in the workspace.
+Copying source WSDL Provider.wsdl to Provider.wsdl.
+
+Elapsed time processing this message definition file: 0.625 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

@@ -1,0 +1,10 @@
+DECLARE ns3 NAMESPACE 'http://www.example.org/NewWSDLFile/';
+DECLARE ns NAMESPACE 'http://www.example.org/Provider/';
+
+
+CREATE COMPUTE MODULE Consumer_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.SOAP.Body.ns:Provider.in = InputRoot.SOAP.Body.ns3:Consumer.in;
+	END;
+END MODULE;

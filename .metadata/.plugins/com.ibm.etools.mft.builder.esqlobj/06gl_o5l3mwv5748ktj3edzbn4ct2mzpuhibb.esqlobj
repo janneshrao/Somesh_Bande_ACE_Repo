@@ -1,0 +1,4 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	DECLARE error ROW;
+		DECLARE Excepref REFERENCE TO InputExceptionList.[1];
+		WHILE ENDSWITH(FIELDNAME(Excepref),'Exception') DO

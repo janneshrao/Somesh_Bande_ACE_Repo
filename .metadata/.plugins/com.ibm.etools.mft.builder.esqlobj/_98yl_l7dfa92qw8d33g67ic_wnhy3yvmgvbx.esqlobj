@@ -1,0 +1,12 @@
+CREATE COMPUTE MODULE BACKEND_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+	
+	
+	Set OutputRoot.JSON.Data.header.status='success';
+	Set OutputRoot.JSON.Data.responceCode='200';
+	
+	
+	SET OutputRoot.JSON.Data.result='success'; 
+		END;
+END MODULE;

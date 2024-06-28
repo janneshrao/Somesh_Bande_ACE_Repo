@@ -1,0 +1,5 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		SET OutputRoot.ComIbmGroupCompleteNode.Group.Replies.GROUP[].Reply.Root.JSON.A=InputRoot;
+		--SET OutputRoot=InputRoot;
+			END;

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><MessageBroker name="RCD_Appplication">
+  <XSDCollection href="platform:/resource/RCD_Appplication/XML1.xsd" prefix="" targetNamespace="">
+    <element href="platform:/resource/RCD_Appplication/XML1.xsd#//DETAILS;XSDElementDeclaration" name="DETAILS"/>
+    <element href="platform:/resource/RCD_Appplication/XML1.xsd#//EMP;XSDElementDeclaration=1" name="EMP" type="mlib://RCD_Appplication#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/RCD_Appplication/XML1.xsd#//NAME;XSDElementDeclaration=2" name="NAME" type="mlib://RCD_Appplication#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+  </XSDCollection>
+</MessageBroker>

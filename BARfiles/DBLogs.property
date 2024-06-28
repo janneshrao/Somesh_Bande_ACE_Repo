@@ -1,0 +1,37 @@
+BIP1052I: Reading Bar file using runtime mqsireadbar...
+C:\Users\Sreenivas Bandaru\IBM\ACET12\workspace\BARfiles\DBLogs.bar:
+  DBLOGS.appzip (3/18/24 11:29 AM):
+    application.descriptor (3/18/24 11:29 AM):
+    LOGS_MSGFLOW.cmf (3/18/24 11:29 AM):
+    Deployment descriptor:
+      startMode
+      LOGS_MSGFLOW#additionalInstances
+      LOGS_MSGFLOW#commitCount
+      LOGS_MSGFLOW#commitInterval
+      LOGS_MSGFLOW#coordinatedTransaction
+      LOGS_MSGFLOW#consumerPolicySet
+      LOGS_MSGFLOW#providerPolicySet
+      LOGS_MSGFLOW#consumerPolicySetBindings
+      LOGS_MSGFLOW#providerPolicySetBindings
+      LOGS_MSGFLOW#securityProfileName
+      LOGS_MSGFLOW#monitoringProfile
+      LOGS_MSGFLOW#startMode
+      LOGS_MSGFLOW#startInstancesWhenFlowStarts
+      LOGS_MSGFLOW#maximumRateMsgsPerSec
+      LOGS_MSGFLOW#wlmPolicy
+      LOGS_MSGFLOW#notificationThresholdMsgsPerSec
+      LOGS_MSGFLOW#processingTimeoutSec
+      LOGS_MSGFLOW#processingTimeoutAction
+      LOGS_MSGFLOW#Compute.connectDatasourceBeforeFlowStarts
+      LOGS_MSGFLOW#Compute.dataSource = DSN
+      LOGS_MSGFLOW#Compute.validateMaster
+      LOGS_MSGFLOW#HTTP Input.URLSpecifier = /DB
+      LOGS_MSGFLOW#HTTP Input.decompressInputMessage
+      LOGS_MSGFLOW#HTTP Input.faultFormat
+      LOGS_MSGFLOW#HTTP Input.securityProfileName
+      LOGS_MSGFLOW#HTTP Input.timeoutForClient
+      LOGS_MSGFLOW#HTTP Input.useHTTPS = yes
+      LOGS_MSGFLOW#HTTP Input.validateMaster
+      LOGS_MSGFLOW#HTTP Reply.validateMaster
+
+BIP8071I: Successful command completion.

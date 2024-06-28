@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <input path="/XML_MAPPING.xsd" var="var3"/>
+    <input path="jar:file://!com/ibm/msl/mapping/cache/xsds/cache.xsd" var="var2"/>
+    <output path="/XML_MAPPING.xsd" var="var4"/>
+    <output path="jar:file://!com/ibm/msl/mapping/cache/xsds/cache.xsd" var="var1"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="GlobalMapping2_msgFlow_Mapping">
+        <input path="$var3/mb:msg(Details,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_Details"/>
+        <output path="$var4/mb:msg(Details,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_Details1"/>
+        <move>
+            <input path="$ComIbmMessageAssembly_Details/Properties"/>
+            <output path="$ComIbmMessageAssembly_Details1/Properties"/>
+        </move>
+        <transaction>
+            <cacheGet>
+                <input path="$ComIbmMessageAssembly_Details/Details/ID"/>
+                <output path="$var1/CacheGet"/>
+                <move>
+                    <input path="."/>
+                    <output path="Key"/>
+                </move>
+            </cacheGet>
+            <cacheReturn>
+                <input path="$var2/CacheGetReturn"/>
+                <output path="$ComIbmMessageAssembly_Details1/Details/NAME"/>
+                <move>
+                    <input path="Value"/>
+                    <output path="."/>
+                </move>
+            </cacheReturn>
+        </transaction>
+        <move>
+            <input path="$ComIbmMessageAssembly_Details/Details/PLACE"/>
+            <output path="$ComIbmMessageAssembly_Details1/Details/PLACE"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_Details/Details/ID"/>
+            <output path="$ComIbmMessageAssembly_Details1/Details/ID"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

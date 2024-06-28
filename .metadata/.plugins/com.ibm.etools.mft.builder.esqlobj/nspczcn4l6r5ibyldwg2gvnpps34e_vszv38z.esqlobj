@@ -1,0 +1,3 @@
+CREATE PROCEDURE Decrypt(IN input BLOB )
+LANGUAGE JAVA
+EXTERNAL NAME "Java_TEST.EandD.decryptData";

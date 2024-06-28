@@ -1,0 +1,7 @@
+CREATE COMPUTE MODULE A_msg_flow_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot=InputRoot;
+		SET OutputLocalEnvironment.Destination.HTTP.RequestIdentifier='';
+	END;
+END MODULE;

@@ -1,0 +1,10 @@
+CREATE COMPUTE MODULE A_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot= InputRoot;
+
+		SET OutputRoot.XMLNSC = InputRoot.XMLNSC;
+		
+		
+	END;
+END MODULE;

@@ -1,0 +1,7 @@
+CREATE COMPUTE MODULE DEMO_MSG_FLOW_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		Set OutputRoot.SOAP.Body.ns1:RequestResponse.out='the WSDL is created correct';
+		PROPAGATE to TERMINAL DELETE   NONE 'out1';
+	END;
+END MODULE;

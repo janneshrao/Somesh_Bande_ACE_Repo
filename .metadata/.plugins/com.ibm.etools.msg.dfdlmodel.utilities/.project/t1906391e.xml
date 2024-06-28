@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><MessageBroker name="DataLibrary">
+  <XSDCollection href="platform:/resource/DataLibrary/SaleMessage.xsd" prefix="sm" targetNamespace="http://iib.tutorial/salesMessage">
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Description;XSDElementDeclaration" name="Description" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Quantity;XSDElementDeclaration=1" name="Quantity" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//CompletionTime;XSDElementDeclaration=2" name="CompletionTime" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Invoice;XSDElementDeclaration=3" name="Invoice"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Trailer;XSDElementDeclaration=4" name="Trailer"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//SaleListCount;XSDElementDeclaration=5" name="SaleListCount" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Code;XSDElementDeclaration=6" name="Code" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Category;XSDElementDeclaration=7" name="Category" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Port;XSDElementDeclaration=8" name="Port" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Item;XSDElementDeclaration=9" name="Item"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Header;XSDElementDeclaration=10" name="Header"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//SaleMessage;XSDElementDeclaration=11" name="SaleMessage"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Price;XSDElementDeclaration=12" name="Price" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//SaleList;XSDElementDeclaration=13" name="SaleList"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Surname;XSDElementDeclaration=14" name="Surname" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Initial;XSDElementDeclaration=15" name="Initial" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Balance;XSDElementDeclaration=16" name="Balance" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleMessage.xsd#//Hostname;XSDElementDeclaration=17" name="Hostname" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+  </XSDCollection>
+  <XSDCollection href="platform:/resource/DataLibrary/SaleReport.xsd" prefix="sr" targetNamespace="http://iib.tutorial/sales/report">
+    <element href="platform:/resource/DataLibrary/SaleReport.xsd#//Category;XSDElementDeclaration" name="Category" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleReport.xsd#//Description;XSDElementDeclaration=1" name="Description" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleReport.xsd#//Quantity;XSDElementDeclaration=2" name="Quantity" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleReport.xsd#//Item;XSDElementDeclaration=3" name="Item"/>
+    <element href="platform:/resource/DataLibrary/SaleReport.xsd#//Price;XSDElementDeclaration=4" name="Price" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleReport.xsd#//SalesReport;XSDElementDeclaration=5" name="SalesReport"/>
+    <element href="platform:/resource/DataLibrary/SaleReport.xsd#//FirstName;XSDElementDeclaration=6" name="FirstName" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleReport.xsd#//SalesRecord;XSDElementDeclaration=7" name="SalesRecord"/>
+    <element href="platform:/resource/DataLibrary/SaleReport.xsd#//LastName;XSDElementDeclaration=8" name="LastName" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/DataLibrary/SaleReport.xsd#//Total;XSDElementDeclaration=9" name="Total" type="mlib://DataLibrary#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+  </XSDCollection>
+</MessageBroker>

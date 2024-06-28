@@ -1,0 +1,10 @@
+
+[
+  'C:\\Program Files\\IBM\\ACE\\12.0.3.0\\tools\\openapieditor\\openapieditor.exe',
+  'C:/Users/Sreenivas Bandaru/IBM/ACET12/workspace/REST_Application/openapi.json',
+  '10796',
+  'C:/Users/Sreenivas Bandaru/IBM/ACET12/workspace/.metadata/',
+  '--no-sandbox'
+]
+Listening for Toolkit requests at: \\.\pipe\openapieditor10796
+Create namedpipe server for \\.\pipe\openapieditor10796

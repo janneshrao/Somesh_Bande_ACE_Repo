@@ -1,0 +1,17 @@
+CREATE COMPUTE MODULE A_msg_flow_Compute1
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE num INTEGER;
+		SET num=LENGTH(InputRoot.ComIbmGroupCompleteNode.Group.Replies.a);
+		SET OutputRoot.XMLNSC.b.c = InputRoot.ComIbmGroupCompleteNode.Group.Replies.a.Reply.Root.XMLNSC.a;
+		
+		DECLARE REF REFERENCE TO InputRoot.ComIbmGroupCompleteNode.Group.Replies.a;
+		DECLARE i INTEGER 0;
+		WHILE LASTMOVE(REF) DO
+			SET OutputRoot.XMLNSC.b.c[i] = InputRoot.ComIbmGroupCompleteNode.Group.Replies.a[i];
+			SET i = i+1
+			MOVE REF NEXTSIBLING;
+		END WHILE; 
+		
+			END;
+END MODULE;

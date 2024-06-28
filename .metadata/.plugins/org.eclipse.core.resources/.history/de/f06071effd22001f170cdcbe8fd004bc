@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <input path="/XML_MAPPING.xsd"/>
+    <output path="/XML_MAPPING.xsd" var="var3"/>
+    <output path="jar:file://!com/ibm/msl/mapping/cache/xsds/cache.xsd" var="var4"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="GlobalCatch_MAGFlow_Mapping">
+        <input path="mb:msg(Details,assembly,XMLNSC,Properties)" var="MessageAssembly"/>
+        <output path="$var3/mb:msg(Details,assembly,XMLNSC,Properties)" var="MessageAssembly1"/>
+        <cachePut>
+            <input path="$MessageAssembly/Details"/>
+            <output path="$var4/CachePut"/>
+            <move>
+                <input path="NAME"/>
+                <output path="Value"/>
+            </move>
+            <move>
+                <input path="ID"/>
+                <output path="Key"/>
+            </move>
+        </cachePut>
+        <move>
+            <input path="$MessageAssembly/Details"/>
+            <output path="$MessageAssembly1/Details"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

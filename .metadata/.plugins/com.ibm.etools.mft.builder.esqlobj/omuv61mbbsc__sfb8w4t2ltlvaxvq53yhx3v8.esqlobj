@@ -1,0 +1,6 @@
+CREATE COMPUTE MODULE A_msg_flow_Compute1
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.ComIbmGroupCompleteNode.Group.Replies.GROUP[ ].Reply.Root.JSON.A=InputRoot.ComIbmGroupCompleteNode.Group.Replies.GROUP[ ].Reply.Root.JSON.A;
+	END;
+END MODULE;

@@ -1,0 +1,4 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		SET OutputLocalEnvironment.Destination.RouterList.DestinationData[1].labelName = 'GET';
+	END;

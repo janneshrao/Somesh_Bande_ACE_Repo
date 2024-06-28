@@ -1,0 +1,9 @@
+
+
+CREATE COMPUTE MODULE RoutingNodesMSGFlow_Compute1
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><MessageBroker name="GlobalCatche_mapping">
+  <XSDCollection href="platform:/resource/GlobalCatche_mapping/XML_MAPPING.xsd" prefix="" targetNamespace="">
+    <element href="platform:/resource/GlobalCatche_mapping/XML_MAPPING.xsd#//Details;XSDElementDeclaration" name="Details"/>
+    <element href="platform:/resource/GlobalCatche_mapping/XML_MAPPING.xsd#//ID;XSDElementDeclaration=1" name="ID" type="mlib://GlobalCatche_mapping#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/GlobalCatche_mapping/XML_MAPPING.xsd#//PLACE;XSDElementDeclaration=2" name="PLACE" type="mlib://GlobalCatche_mapping#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+    <element href="platform:/resource/GlobalCatche_mapping/XML_MAPPING.xsd#//NAME;XSDElementDeclaration=3" name="NAME" type="mlib://GlobalCatche_mapping#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+  </XSDCollection>
+</MessageBroker>

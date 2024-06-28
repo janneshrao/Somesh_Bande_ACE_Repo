@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <input path="/XML_MAPPING.xsd"/>
+    <output path="/XML_MAPPING.xsd"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="GlobalMapping2_msgFlow_Mapping">
+        <input path="mb:msg(Details,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_Details"/>
+        <output path="mb:msg(Details,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_Details1"/>
+        <move>
+            <input path="$ComIbmMessageAssembly_Details/Properties"/>
+            <output path="$ComIbmMessageAssembly_Details1/Properties"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

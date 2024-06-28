@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SOAPReqRes/" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/SOAPReqRes/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <xsd:element ibmSchExtn:docRoot="true" name="SOAP_TRANS">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="DETAILS" type="tns:DETAILS"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element ibmSchExtn:docRoot="true" name="SOAP_TRANSResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Details" type="tns:Detail"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="DETAILS">
+      	<xsd:sequence>
+      		<xsd:element name="NAME" type="xsd:string"/>
+      		<xsd:element name="ID" type="xsd:string"/>
+      		<xsd:element name="ADDRESS" type="xsd:string"/>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="Detail">
+      	<xsd:sequence>
+      		<xsd:element name="NAME" type="xsd:string"/>
+      		<xsd:element name="EMPId" type="xsd:string"/>
+      		<xsd:element name="Place" type="xsd:string"/>
+      	</xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>

@@ -1,0 +1,29 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		
+		 CALL CopyEntireMessage();
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+--		<TimeoutRequest>
+--		<Action>SET</Action>
+--		<Identifier>TEST_TIMER</Identifier>
+--		<StartDate>TODAY</StartDate>
+--		<Interval>5</Interval>
+--		<Count>3</Count>
+--		<IgnoreMissed>TRUE</IgnoreMissed>
+--		<AllowOverwrite>TRUE</AllowOverwrite>
+--		</TimeoutRequest>
+
+		SET OutputLocalEnvironment.TimeoutRequest.Action = 'SET';
+		SET OutputLocalEnvironment.TimeoutRequest.Identifier = 'TEST_TIMER';
+		SET OutputLocalEnvironment.TimeoutRequest.StartDate = 'TODAY';
+		SET OutputLocalEnvironment.TimeoutRequest.StartTime ='NOW';   ---14:14:15.571
+		SET OutputLocalEnvironment.TimeoutRequest.Interval = 5;
+		SET OutputLocalEnvironment.TimeoutRequest.Count = 3;
+		SET OutputLocalEnvironment.TimeoutRequest.IgnoreMissed = 'TRUE';
+		SET OutputLocalEnvironment.TimeoutRequest.AllowOverwrite = 'TRUE';
+		
+	END;

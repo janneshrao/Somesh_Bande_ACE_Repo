@@ -1,0 +1,17 @@
+
+
+CREATE COMPUTE MODULE JAVA_MSG_FLOW_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		--CALL ENCRYPT(InputRoot.BLOB.BLOB);
+		SET OutputRoot.BLOB.BLOB=Decrypt();
+		
+		
+	END;
+END MODULE;
+
+
+CREATE PROCEDURE Decrypt() returns blob
+LANGUAGE JAVA
+EXTERNAL NAME "Java_TEST.EandD.decryptData";

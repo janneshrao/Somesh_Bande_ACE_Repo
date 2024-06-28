@@ -1,0 +1,22 @@
+
+
+Importing file: C:\Users\Sreenivas Bandaru\IBM\ACET12\workspace\DEMO_ASK\SOAP_DEMO.wsdl
+
+The WSDL import will proceed with bindings SOAP_DEMOSOAP.
+Creating wsdl schema document for file:///C:/Users/Sreenivas Bandaru/IBM/ACET12/workspace/DEMO_ASK/SOAP_DEMO.wsdl.
+Parsing wsdl binding {http://www.example.org/SOAP_DEMO/}SOAP_DEMOSOAP.
+Parsing wsdl binding input NewOperation.
+Parsing wsdl binding output NewOperation.
+Processing doc style for operation NewOperation.
+Populating WSDL schema SOAP_DEMO.xsd.
+Creating file SOAP_DEMO.xsd in the workspace.
+Creating file SOAP_DEMO_InlineSchema1.xsd in the workspace.
+Copying source WSDL SOAP_DEMO.wsdl to SOAP_DEMO.wsdl.
+
+Elapsed time processing this message definition file: 0.469 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

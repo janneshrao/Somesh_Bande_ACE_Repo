@@ -1,0 +1,7 @@
+CREATE COMPUTE MODULE Router_MSG_Flow_Compute1
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputLocalEnvironment.Destination.HTTP.RequestIdentifier =  CAST(InputRoot.MQRFH2.Identifier AS BLOB);
+		SEt OutputRoot.JSON=InputRoot.JSON;
+	END;
+END MODULE;

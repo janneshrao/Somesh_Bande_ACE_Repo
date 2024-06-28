@@ -1,0 +1,6 @@
+CREATE COMPUTE MODULE SOAP_DEMO_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.SOAP.Body.ns:NewOperationResponse.out=InputRoot.SOAP.Body.ns:NewOperation.in;
+	END;
+END MODULE;

@@ -1,0 +1,22 @@
+
+
+Importing file: C:\Users\Sreenivas Bandaru\IBM\ACET12\workspace\SOAP_Transformation\SOAPReqRes.wsdl
+
+The WSDL import will proceed with bindings SOAPReqResSOAP.
+Creating wsdl schema document for file:///C:/Users/Sreenivas Bandaru/IBM/ACET12/workspace/SOAP_Transformation/SOAPReqRes.wsdl.
+Parsing wsdl binding {http://www.example.org/SOAPReqRes/}SOAPReqResSOAP.
+Parsing wsdl binding input SOAP_TRANS.
+Parsing wsdl binding output SOAP_TRANS.
+Processing doc style for operation SOAP_TRANS.
+Populating WSDL schema SOAPReqRes.xsd.
+Creating file SOAPReqRes.xsd in the workspace.
+Creating file SOAPReqRes_InlineSchema1.xsd in the workspace.
+Copying source WSDL SOAPReqRes.wsdl to SOAPReqRes.wsdl.
+
+Elapsed time processing this message definition file: 0.195 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

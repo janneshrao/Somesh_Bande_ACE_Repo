@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Provider" targetNamespace="http://www.example.org/Provider/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/Provider/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="Provider_InlineSchema1.xsd"/>
+        <binding hasEncoding="false" imported="true" name="ProviderSOAP" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    
+          <xsd:schema targetNamespace="http://www.example.org/Provider/" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+<xsd:include schemaLocation="Provider_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="ProviderRequest">
+    <wsdl:part element="tns:Provider" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ProviderResponse">
+    <wsdl:part element="tns:ProviderResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="Provider">
+    <wsdl:operation name="Provider">
+      <wsdl:input message="tns:ProviderRequest"/>
+      <wsdl:output message="tns:ProviderResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProviderSOAP" type="tns:Provider">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Provider">
+      <soap:operation soapAction="http://www.example.org/Provider/Provider"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Provider">
+    <wsdl:port binding="tns:ProviderSOAP" name="ProviderSOAP">
+      <soap:address location="http://localhost:7800/provider"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

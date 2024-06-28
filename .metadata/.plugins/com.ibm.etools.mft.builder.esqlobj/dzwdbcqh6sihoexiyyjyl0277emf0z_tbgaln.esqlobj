@@ -1,0 +1,7 @@
+CREATE COMPUTE MODULE postDemoREST_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;

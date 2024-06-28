@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><MessageBroker name="Mapping">
+  <XSDCollection href="platform:/resource/Mapping/XML_DOC.xsd" prefix="" targetNamespace="">
+    <element href="platform:/resource/Mapping/XML_DOC.xsd#//NAME;XSDElementDeclaration" name="NAME" type="mlib://Mapping#/-/simpleType{http://www.w3.org/2001/XMLSchema}string"/>
+  </XSDCollection>
+</MessageBroker>

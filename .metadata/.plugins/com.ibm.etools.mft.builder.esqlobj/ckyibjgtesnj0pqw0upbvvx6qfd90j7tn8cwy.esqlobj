@@ -1,0 +1,6 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		DECLARE var BOOLEAN; 
+		CALL ENCRYPT(InputRoot.BLOB.BLOB) into var;
+		
+	END;

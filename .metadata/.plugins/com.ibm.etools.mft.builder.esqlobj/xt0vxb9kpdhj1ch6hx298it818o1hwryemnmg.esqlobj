@@ -1,0 +1,4 @@
+/*EATE FUNCTION Main() RETURNS BOOLE*/
+	BEGIN
+		set OutputRoot.SOAP.Body.ns:ConsumerResponse.out=InputRoot.SOAP.Body.ns:Consumer.in;
+	END;

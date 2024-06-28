@@ -1,0 +1,77 @@
+CREATE COMPUTE MODULE SchoolFeePayment_BussinesFlow_requestForT24
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET Environment.MQRFH2=InputRoot.MQRFH2;
+		DECLARE DbLoggingTime TIMESTAMP CURRENT_TIME;
+		DECLARE dbLoggingDate TIMESTAMP CURRENT_DATE;
+		DECLARE rc BOOLEAN FALSE;
+		CALL initLog4j(config) INTO rc;
+		IF ( rc = FALSE ) THEN
+			DECLARE msg CHARACTER ;
+			SET Environment.Variables.Log4j.ErrorMsg = 'LOG4J_INIT_ERROR_MSG';
+		END IF;
+		DECLARE outRefer REFERENCE TO OutputRoot;
+		DECLARE ccsid INTEGER InputRoot.Properties.CodedCharSetId;
+		DECLARE encodeRef INTEGER InputRoot.Properties.Encoding;
+		DECLARE inRef REFERENCE TO InputRoot.JSON.Data;
+		SET OutputRoot.Properties = InputRoot.Properties;
+		SET OutputRoot.MQMD = InputRoot.MQMD;
+		SET Environment.Variables.reqMsg =getpayload(inRef,encodeRef,ccsid);
+		
+		--DBLOGS--
+
+			CALL LOGS_CALL(MessageFlowLabel, DbLoggingTime,'..............Initializing School Fee Payment logging...........') INTO rc;
+			CALL LOGS_CALL(MessageFlowLabel, DbLoggingTime,'Request from Postilion::') INTO rc;
+			CALL LOGS_CALL(MessageFlowLabel, DbLoggingTime,Environment.Variables.reqMsg) INTO rc;
+			CALL LOGS_CALL(MessageFlowLabel, DbLoggingTime,'HTTP ID::'|| InputRoot.MQRFH2.Identifier) INTO rc;
+--		IF IsLogRequired LIKE 'Y' THEN
+--			CALL writeToLogFile(MessageFlowLabel, 'DEMO', 'INFO','..............Initializing School Fee Payment logging...........') INTO rc;
+--			CALL writeToLogFile(MessageFlowLabel, 'DEMO', 'INFO','Request from Postilion::') INTO rc;
+--			CALL writeToLogFile(MessageFlowLabel, 'DEMO', 'INFO',Environment.Variables.reqMsg) INTO rc;
+--			CALL writeToLogFile(MessageFlowLabel, 'DEMO', 'INFO','HTTP ID::'|| InputRoot.MQRFH2.Identifier) INTO rc;
+--		END IF;
+		If CONTAINS(InputRoot.JSON.Data.debitAmount,'-') THEN
+			SET OutputRoot.Properties=InputRoot.Properties;
+			SET OutputRoot.MQRFH2=Environment.MQRFH2;
+			CREATE LASTCHILD OF OutputRoot DOMAIN('JSON');
+			DECLARE outRef REFERENCE TO OutputRoot.JSON;
+			CREATE LASTCHILD of OutputRoot.JSON as outRef NAME 'Data';
+			CREATE LASTCHILD OF OutputRoot.JSON.Data NAME 'SchoolFeePayment';
+			CREATE LASTCHILD OF OutputRoot.JSON.Data.* NAME ('header');  ---defining the tree structure in which we are mentioning the header and body at the last.
+			CREATE LASTCHILD OF OutputRoot.JSON.Data.* NAME ('body');
+			DECLARE headRef REFERENCE TO OutputRoot.JSON.Data.*.header;
+			DECLARE bodyRef REFERENCE TO OutputRoot.JSON.Data.*.body;
+			SET headRef.channel = '*236#';
+			SET headRef.processingCode = '400000';
+			SET headRef.status = 'Failure';
+			SET bodyRef.Amount = InputRoot.JSON.Data.debitAmount;
+			SET bodyRef.Message = 'Negative Amount';
+			call writeToLogFile(MessageFlowLabel,'DEMO','INFO','AMOUNT ENTERD IS NEGATIVE') INTO rc;
+			SET OutputLocalEnvironment.Destination.MQ.DestinationData[1].queueName = 'outRouter';
+			PROPAGATE TO TERMINAL 'out1';
+			
+		ELSE
+			CREATE LASTCHILD OF OutputRoot DOMAIN ('JSON');
+			DECLARE outRef REFERENCE TO OutputRoot.JSON;
+			CREATE LASTCHILD OF OutputRoot.JSON AS outRef NAME 'Data';
+			DECLARE debitAccountId CHARACTER InputRoot.JSON.Data.debitAccountNumber;
+			DECLARE debitCurrency CHARACTER InputRoot.JSON.Data.debitCurrency;
+			DECLARE creditAccountId CHARACTER InputRoot.JSON.Data.creditAccountNumber;
+			DECLARE orderingCustomerName CHARACTER InputRoot.JSON.Data.biller;
+			DECLARE paymentCurrency CHARACTER InputRoot.JSON.Data.debitCurrency;
+			DECLARE transactionAmount CHARACTER InputRoot.JSON.Data.debitAmount;
+			DECLARE executionDate CHARACTER CAST(dbLoggingDate AS CHARACTER FORMAT 'yyyyMMdd');
+			DECLARE narrative CHARACTER InputRoot.JSON.Data.transactionType;
+			DECLARE customer CHARACTER InputRoot.JSON.Data.debitReference;
+			DECLARE SFP_T24uRL CHARACTER;
+			--{debitAccount}/{debitCurrency}/{transactionAmount}/{executionDate}/{customer}
+			SET SFP_T24uRL = SchoolFeeURL||debitAccountId||'/'||debitCurrency||'/'||transactionAmount||'/'||executionDate||'/'||customer;
+			SET outRef = inRef;
+			SET Environment.Variables.jsonData = outRef;
+			SET OutputRoot.HTTPRequestHeader."Content-Type" = 'application/json';
+			SET OutputLocalEnvironment.Destination.HTTP.RequestLine.Method = 'POST';
+			SET OutputLocalEnvironment.Destination.HTTP.RequestURL = SFP_T24uRL;
+		end IF;
+		
+	END;
+END MODULE;
